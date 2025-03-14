@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Purchases - Inventory Management System</title>
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body id="purchasesPage">
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-4">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Inventory Management System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="inventory.html">Inventory</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="purchases.html">Purchases</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sales.html">Sales</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2 class="mb-4">Add Purchase</h2>
+    <form id="addPurchaseForm" onsubmit="addPurchase(event)">
+      <div class="row g-3">
+        <div class="col-md-3">
+          <label for="purchaseId" class="form-label">Purchase ID</label>
+          <input type="text" class="form-control" id="purchaseId" placeholder="Enter Purchase ID">
+        </div>
+        <div class="col-md-2">
+          <label for="purchaseDate" class="form-label">Date</label>
+          <input type="date" class="form-control" id="purchaseDate">
+        </div>
+        <div class="col-md-4">
+          <label for="vendorName" class="form-label">Vendor Name</label>
+          <input type="text" class="form-control" id="vendorName" placeholder="Enter Vendor Name">
+        </div>
+        <div class="col-md-3">
+          <label for="itemName" class="form-label">Item Name</label>
+          <input type="text" class="form-control" id="itemName" placeholder="Enter Item Name">
+        </div>
+
+      </div>
+      <br>
+      <div class="row g-3">
+        <div class="col-md-2">
+          <label for="unitCostPrice" class="form-label">Unit Cost Price</label>
+          <input type="number" class="form-control" id="unitCostPrice" placeholder="Enter Unit Cost Price">
+        </div>
+        <div class="col-md-2">
+          <label for="quantity" class="form-label">Quantity</label>
+          <input type="number" class="form-control" id="quantity" placeholder="Enter Quantity">
+        </div>
+        <div class="col-md-2">
+          <label for="purchaseCost" class="form-label">Purchase Cost</label>
+          <input type="number" class="form-control" id="purchaseCost" placeholder="Enter Purchase Cost">
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary mt-3">Add Purchase</button>
+    </form><br>
+
+    <div>
+      <h2 class="mb-4">Purchase List</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Purchase ID</th>
+            <th scope="col">Date</th>
+            <th scope="col">Vendor Name</th>
+            <th scope="col">Item Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Unit Cost Price</th>
+            <th scope="col">Purchase Cost</th>
+          </tr>
+        </thead>
+        <tbody id="purchaseList">
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="text-center mt-5 py-3 bg-light">
+    <p>© 2025 Inventory Management System. All rights reserved.</p>
+  </footer>
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/Database.js" type="module"></script>
+  <script src="/script.js" type="module"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+</body>
+
+</html>

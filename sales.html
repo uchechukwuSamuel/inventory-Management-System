@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Sales - Inventory Management System</title>
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body id="salesPage">
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-4">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Inventory Management System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="inventory.html">Inventory</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="purchases.html">Purchases</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sales.html">Sales</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2 class="mb-4 text-center">Add Sale</h2>
+    <form id="addSaleForm" onsubmit="addSale(event)">
+      <div class="row g-3">
+        <div class="col-md-3">
+          <label for="saleId" class="form-label">Sale ID</label>
+          <input type="text" class="form-control" id="saleId" placeholder="Enter Sale ID">
+        </div>
+        <div class="col-md-3">
+          <label for="customerName" class="form-label">Customer Name</label>
+          <input type="text" class="form-control" id="customerName" placeholder="Enter Customer Name">
+        </div>
+        <div class="col-md-3">
+          <label for="quantity" class="form-label">Quantity</label>
+          <input type="number" class="form-control" id="quantity" placeholder="Enter Quantity">
+        </div>
+        <div class="col-md-3">
+          <label for="price" class="form-label">Price</label>
+          <input type="number" class="form-control" id="price" placeholder="Enter Price">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3">Add Sale</button>
+    </form>
+
+    <div>
+      <h2 class="mb-4 text-center">Sales List</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Sale ID</th>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+
+
+  </main>
+
+  <footer class="text-center mt-5 py-3 bg-light">
+    <p>© 2025 Inventory Management System. All rights reserved.</p>
+  </footer>
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/Database.js" type="module"></script>
+  <script src="/script.js" type="module"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+
+</body>
+
+</html>

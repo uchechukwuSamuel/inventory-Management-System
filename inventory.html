@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory - Inventory Management System</title>
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body id="inventoryPage">
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-4">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Inventory Management System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="inventory.html">Inventory</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="purchases.html">Purchases</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sales.html">Sales</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="container">
+    <h2 class="mb-4">Add Inventory Item</h2>
+
+    <form id="addItemForm" class="mb-4">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="itemId" class="form-label">Item ID</label>
+          <input type="text" class="form-control" id="itemId" placeholder="Enter Item ID">
+        </div>
+        <div class="col-md-6">
+          <label for="itemName" class="form-label">Item Name</label>
+          <input type="text" class="form-control" id="itemName" placeholder="Enter Item Name">
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="quantity" class="form-label">Quantity</label>
+          <input type="number" class="form-control" id="quantity" placeholder="Enter Quantity">
+        </div>
+        <div class="col-md-6">
+          <label for="price" class="form-label">Price</label>
+          <input type="number" class="form-control" id="price" placeholder="Enter Price">
+        </div>
+      </div>
+      <button id="addItemButton" type="button" class="btn btn-primary mt-3">Add Item</button>
+    </form>
+
+    <div class="d-flex justify-content-between">
+      <h2 class="mb-4">Inventory List</h2>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search Inventory" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+
+    <table class="table table-striped" id="inventoryTable">
+      <thead>
+        <tr>
+          <th scope="col">Item ID</th>
+          <th scope="col">Item Name</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody id="inventoryList">
+      </tbody>
+    </table>
+
+
+
+  </main>
+
+  <footer class="text-center mt-5 py-3 bg-light">
+    <p>© 2025 Inventory Management System. All rights reserved.</p>
+  </footer>
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/Database.js" type="module"></script>
+  <script src="/script.js" type="module"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+
+</body>
+
+</html>
